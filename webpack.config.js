@@ -1,7 +1,10 @@
-const merge   = require('webpack-merge');
-const path    = require('path');
-const webpack = require('webpack');
+const merge     = require('webpack-merge');
+const path      = require('path');
+const stylelint = require('stylelint');
+const webpack   = require('webpack');
 const NpmInstallWebpackPlugin = require('npm-install-webpack-plugin');
+
+stylelint(require('stylelint-config-suitcss'));
 
 const TARGET = process.env.npm_lifecycle_event;
 const PATHS = {
@@ -36,7 +39,14 @@ const common = {
         // Include accepts either a path or an array of paths.
         include: PATHS.app
       }
-    ]
+    ],
+    postcss: function() {
+      return [stylelint({
+        rules: {
+          'color-hex-case': 'lower'
+        }
+      })];
+    }
   }
 };
 
