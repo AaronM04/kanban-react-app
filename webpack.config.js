@@ -34,7 +34,7 @@ const common = {
 };
 
 // Default configuration
-if (TARGET === 'start' || !target) {
+if (TARGET === 'start' || !TARGET) {
   module.exports = merge(common, {
     devtool: 'eval-source-map',
     devServer: {

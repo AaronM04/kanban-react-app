@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack",
+    "lint": "eslint . --ext .js --ext .jsx",
     "start": "webpack-dev-server"
   },
   "keywords": [],
@@ -12,6 +13,8 @@
   "license": "ISC",
   "devDependencies": {
     "css-loader": "^0.23.1",
+    "eslint": "^2.11.1",
+    "eslint-plugin-react": "^5.1.1",
     "npm-install-webpack-plugin": "^4.0.0",
     "style-loader": "^0.13.1",
     "webpack": "^1.13.1",
